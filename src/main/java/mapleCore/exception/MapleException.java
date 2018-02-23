@@ -1,4 +1,4 @@
-package mapleCore.Exception;
+package mapleCore.exception;
 
 /**
  * Created by williamallen on 1/25/18.

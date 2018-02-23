@@ -19,7 +19,7 @@ public class LIFXPacketFactory {
      */
 
     public static byte[] createInstruction(){
-
+        return null;
     }
 
 

@@ -1,4 +1,4 @@
-package util.network;
+package util.network.http;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

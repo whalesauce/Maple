@@ -1,6 +1,7 @@
 package util.log;
 
 import javax.swing.*;
+import java.awt.geom.RoundRectangle2D;
 
 /**
  * Created by williamallen on 1/25/18.
@@ -60,9 +61,20 @@ public class Log {
         /** Create the panel **/
         logPanel= new JPanel();
 
-
         /** Create the panel **/
         logPanel= new JPanel();
+
+
+        /** Init frame values **/
+        logFrame.setUndecorated(true);
+        logFrame.setSize(200, 200);
+        logFrame.setResizable(true);
+        logFrame.setShape(new RoundRectangle2D.Double(10, 10, 100, 100, 50, 50));
+        logFrame.setOpacity(0.8f);
+        logFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        logFrame.setVisible(true);
+
+
     }
 
 

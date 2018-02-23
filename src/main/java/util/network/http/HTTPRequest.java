@@ -1,4 +1,4 @@
-package util.network;
+package util.network.http;
 
 /**
  * Created by williamallen on 1/22/18.

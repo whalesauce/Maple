@@ -1,6 +1,6 @@
-package util.network;
+package util.network.http;
 
-import mapleCore.Exception.MapleSessionException;
+import mapleCore.exception.MapleSessionException;
 
 import java.io.IOException;
 import java.net.*;
@@ -87,6 +87,9 @@ public class MapleSession {
     /** Set custom cookie policies **/
     public void setCookiePolicy(){
 
+
+
+
     }
 
 
@@ -119,6 +122,8 @@ public class MapleSession {
 
 
 
+
+
     }
 
     public void closeConnection() throws MapleSessionException{
@@ -137,6 +142,7 @@ public class MapleSession {
     }
 
     public void setRequestType(HTTPRequest requestType){
+
         this.requestType = requestType;
     }
 
