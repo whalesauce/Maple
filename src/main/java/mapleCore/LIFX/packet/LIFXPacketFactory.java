@@ -1,11 +1,14 @@
-package mapleCore.LIFX;
+package mapleCore.LIFX.packet;
+
+import mapleCore.exception.MapleException;
 
 /**
  * Created by williamallen on 1/9/18.
  */
 public class LIFXPacketFactory {
 
-    
+
+
 
     public LIFXPacketFactory(){
 
@@ -18,7 +21,10 @@ public class LIFXPacketFactory {
      *
      */
 
-    public static byte[] createInstruction(){
+    public static byte[] createInstruction() throws MapleException {
+
+
+
         return null;
     }
 

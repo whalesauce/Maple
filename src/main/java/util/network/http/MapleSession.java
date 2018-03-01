@@ -20,7 +20,7 @@ public class MapleSession {
     Map<String, String> headers = new HashMap<>();
 
     /** Request type for current session **/
-    HTTPRequest requestType;
+    HTTPRequestType requestType;
 
     /** Parameters for current session **/
     HTTPParameterStringBuilder parameters;
@@ -56,7 +56,7 @@ public class MapleSession {
     /**
      * Init a session with URL and designated request
      */
-    public MapleSession(String conURL, HTTPRequest requestType) throws MalformedURLException {
+    public MapleSession(String conURL, HTTPRequestType requestType) throws MalformedURLException {
        url = new URL(conURL);
        this.requestType = requestType;
     }
@@ -64,7 +64,7 @@ public class MapleSession {
     /**
      * Init a session with URL and designated request type
      */
-    public MapleSession(String conURL, HTTPRequest requestType, HTTPParameterStringBuilder parameters) throws MalformedURLException {
+    public MapleSession(String conURL, HTTPRequestType requestType, HTTPParameterStringBuilder parameters) throws MalformedURLException {
         url = new URL(conURL);
         this.requestType = requestType;
         this.parameters = parameters;
@@ -75,7 +75,7 @@ public class MapleSession {
     /**
      * Init a session with URL, designated request type and header payload
      */
-    public MapleSession(String conURL, HTTPRequest requestType, HTTPParameterStringBuilder parameters, Map<String, String> headers) throws MalformedURLException {
+    public MapleSession(String conURL, HTTPRequestType requestType, HTTPParameterStringBuilder parameters, Map<String, String> headers) throws MalformedURLException {
         url = new URL(conURL);
         this.requestType = requestType;
         this.parameters = parameters;
@@ -141,12 +141,12 @@ public class MapleSession {
         return url;
     }
 
-    public void setRequestType(HTTPRequest requestType){
+    public void setRequestType(HTTPRequestType requestType){
 
         this.requestType = requestType;
     }
 
-    public HTTPRequest getRequestType(){
+    public HTTPRequestType getRequestType(){
         return requestType;
     }
 

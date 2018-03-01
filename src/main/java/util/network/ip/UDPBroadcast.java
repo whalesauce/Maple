@@ -1,4 +1,4 @@
-package util.network.http.ip;
+package util.network.ip;
 
 import mapleCore.exception.MapleException;
 
@@ -13,11 +13,6 @@ import java.net.InetAddress;
 public class UDPBroadcast {
 
     private static DatagramSocket socket = null;
-
-    public UDPBroadcast(){
-
-    }
-
 
     public static void broadcast(byte[] broadcastMessage, InetAddress address, int port) throws IOException{
         socket = new DatagramSocket();
