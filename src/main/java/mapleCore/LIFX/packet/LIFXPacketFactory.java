@@ -1,5 +1,6 @@
 package mapleCore.LIFX.packet;
 
+import mapleCore.LIFX.payload.Payload;
 import mapleCore.exception.MapleException;
 
 /**
@@ -14,15 +15,13 @@ public class LIFXPacketFactory {
 
     }
 
-    /**
-     * There are a multitude of parts that need to be
-     *
-     *
-     *
-     */
 
-    public static byte[] createInstruction() throws MapleException {
 
+    public static byte[] createInstruction(String payloadType, String[] params) throws MapleException {
+
+        int packetSize = LIFXPacketFrame.getSize();
+
+        //Payload.constructPayload(payloadType, params);
 
 
         return null;

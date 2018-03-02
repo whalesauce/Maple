@@ -7,26 +7,25 @@ import mapleCore.exception.MapleException;
  */
 public class LIFXPacketProtocolHeader {
 
-    public String reservedOne = "0000000000000000000000000000000000000000000000000000000000000000";    /** Reserved 64 bits              | 64 bits **/
-    public String type = "0000000000000000";                                                           /** Determines type of payload    | 16 bits **/
-    public String reservedTwo = "0000000000000000";                                                    /** Reserved 16 bits              | 16 bits **/
+    public static final String reservedOne = "0000000000000000000000000000000000000000000000000000000000000000";    /** Reserved 64 bits              | 64 bits **/
+    /** Payload type                                                                                                /** Determines type of payload    | 16 bits **/
+    public static final String reservedTwo = "0000000000000000";                                                    /** Reserved 16 bits              | 16 bits **/
 
-    public String constructedPacket;
 
-    public LIFXPacketProtocolHeader(String type) throws MapleException {
-        if(type.length() != 16){
-            throw new MapleException("Invalid bit length");
+
+
+
+    public static String returnPacketProtocolHeader(String payloadType) throws MapleException {
+        if(payloadType.length() != 16){
+            throw new MapleException("Invalid bit length \nPayload Type:" + payloadType.length());
         }
 
-        constructedPacket = reservedOne + type + reservedTwo;
+        return reservedOne + payloadType + reservedTwo;
     }
 
-    public int getSize(){
+    public static int getSize(){
         return 96;
     }
 
 
-    public String getConstructedPacket(){
-        return constructedPacket;
-    }
 }
