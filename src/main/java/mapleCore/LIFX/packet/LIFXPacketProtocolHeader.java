@@ -1,15 +1,16 @@
 package mapleCore.LIFX.packet;
 
 import mapleCore.exception.MapleException;
+import util.BinaryString;
 
 /**
  * Created by williamallen on 3/1/18.
  */
 public class LIFXPacketProtocolHeader {
 
-    public static final String reservedOne = "0000000000000000000000000000000000000000000000000000000000000000";    /** Reserved 64 bits              | 64 bits **/
-    /** Payload type                                                                                                /** Determines type of payload    | 16 bits **/
-    public static final String reservedTwo = "0000000000000000";                                                    /** Reserved 16 bits              | 16 bits **/
+    public static final String reservedOne = BinaryString.getReservedBits("0", 64);    /** Reserved 64 bits              | 64 bits **/
+    /** Payload type                                                                                            /** Determines type of payload    | 16 bits **/
+    public static final String reservedTwo = BinaryString.getReservedBits("0", 16);    /** Reserved 16 bits              | 16 bits **/
 
 
 
