@@ -20,7 +20,7 @@ public class LIFXPacketFactory {
 
         int packetSize = LIFXPacketFrame.getSize();
 
-        //LIFXPacketPayload.constructPayload(payloadType, params);
+        //LIFXPacketPayloadFactory.constructPayload(payloadType, params);
 
 
         return null;

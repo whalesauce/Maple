@@ -1,16 +1,12 @@
-package mapleCore.LIFX.payload;
+package mapleCore.LIFX.packet;
 
-import mapleCore.LIFX.packet.LIFXPacketFrame;
-import mapleCore.exception.MapleException;
 import mapleCore.exception.MapleInvalidBitLengthException;
 import util.BinaryString;
-
-import java.util.HashMap;
 
 /**
  * Created by williamallen on 3/1/18.
  */
-public class LIFXPacketPayload {
+public class LIFXPacketPayloadFactory {
 
 
 
@@ -24,7 +20,7 @@ public class LIFXPacketPayload {
     public static final int getHostInfoPayloadID = 12;
     public static final int getHostFirmwarePayloadID = 14;
     public static final int getWifiInfoPayloadID = 16;
-    public static final int getWifiFirmwarePayloadID 18;
+    public static final int getWifiFirmwarePayloadID = 18;
     public static final int getLabelPayloadID = 23;
     public static final int setLabelPayloadID = 24;
     public static final int getVersionPayloadID = 32;
@@ -95,7 +91,7 @@ public class LIFXPacketPayload {
 
     /** 2 */
     public static String returnGetServicePayloadBinaryID(){
-
+        return BinaryString.toFormattedBinaryString(getServicePayloadID, 16);
     }
 
 
@@ -107,13 +103,13 @@ public class LIFXPacketPayload {
      */
 
     /** No payload is required. */
-    public String returnGetHostInfoPayload(){
-
+    public String returnGetHostFirmwarePayload(){
+        return "";
     }
 
     /** 12 */
-    public String returnGetHostInfoPayloadBinaryID(){
-
+    public String returnGetHostFirmwarePayloadBinaryID(){
+        return BinaryString.toFormattedBinaryString(getHostFirmwarePayloadID, 16);
     }
 
 
@@ -126,11 +122,11 @@ public class LIFXPacketPayload {
 
     /** No payload is required. */
     public String returnGetWifiInfoPayload(){
-
+        return null;
     }
-
+    /** 16 */
     public String returnGetWifiInfoPayloadBinaryID(){
-
+        return BinaryString.toFormattedBinaryString(getWifiInfoPayloadID, 16);
     }
 
 
@@ -143,11 +139,11 @@ public class LIFXPacketPayload {
 
     /** No payload is required. */
     public String returnGetWifiFirmwarePayload(){
-
+        return "";
     }
-
+    /** 18 */
     public String returnGetWifiFirmwarePayloadBinaryID(){
-
+        return BinaryString.toFormattedBinaryString(getWifiFirmwarePayloadID, 16);
     }
 
 
@@ -157,11 +153,11 @@ public class LIFXPacketPayload {
 
     /**  No payload is required. */
     public String returnGetPowerPayload(){
-
+        return "";
     }
-
+    /** 20 */
     public String returnGetPowerPayloadBinaryID(){
-
+        return BinaryString.toFormattedBinaryString(getPowerPayloadID, 16);
     }
 
 
@@ -174,11 +170,11 @@ public class LIFXPacketPayload {
      */
 
     public String returnSetPowerPayload(){
-
+        return null;
     }
 
     public String returnSetPowerPayloadBinaryID(){
-
+        return null;
     }
 
 
@@ -191,11 +187,11 @@ public class LIFXPacketPayload {
 
     /** No payload is required. */
     public String returnGetLabelPayload(){
-
+        return null;
     }
 
     public String returnGetLabelPayloadBinaryID(){
-
+        return null;
     }
 
 
@@ -216,7 +212,7 @@ public class LIFXPacketPayload {
 
     /** 101 **/
     public static String returnGETPayloadBinaryID(){
-        return BinaryString.toFormattedBinaryString(getPayloadID, 16);
+        return BinaryString.toFormattedBinaryString(GETPayloadID, 16);
     }
 
 
@@ -287,6 +283,9 @@ public class LIFXPacketPayload {
     public static String returnSetWaveformOptionalPayloadBinaryID(){
         return BinaryString.toFormattedBinaryString(setWaveformOptionalPayloadID, 16);
     }
+
+
+
 
 
 
