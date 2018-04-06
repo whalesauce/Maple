@@ -7,7 +7,7 @@ public class LIFX {
 
 
 
-    public static void setState(boolean state){
 
-    }
+
+    //public static void change
 }
