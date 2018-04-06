@@ -43,7 +43,7 @@ public class LIFXPacketPayloadFactory {
     public static final int acknowledgementPayloadID = 45;
     public static final int stateLocationPayloadID = 50;
     public static final int stateGroupPayloadID = 53;
-    public static final int echoResponsePayloadID = 59;
+    public static final int echoResponsePayloadID  = 59;
 
 
 
