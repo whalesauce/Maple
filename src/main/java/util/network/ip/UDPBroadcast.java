@@ -19,7 +19,6 @@ public class UDPBroadcast {
         socket.setBroadcast(true);
 
         DatagramPacket packet = new DatagramPacket(broadcastMessage, broadcastMessage.length, address, port);
-
         socket.send(packet);
         socket.close();
 

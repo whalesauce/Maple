@@ -18,7 +18,7 @@ public class LIFXPacketFactory {
 
 
 
-    //TODO - Consolidate payloadPakcetSizes into the PayloadFactory class
+    //TODO - Consolidate payloadPacketSizes into the PayloadFactory class
 
 
     public LIFXPacketFactory(){
@@ -28,7 +28,7 @@ public class LIFXPacketFactory {
 
 
     /** Light on packet */
-    public static String returnLightOnPacket(LIFXBulb light, boolean allLights) throws MapleException {
+    public static byte[] returnLightOnPacket(LIFXBulb light, boolean allLights) throws MapleException {
 
 
 
@@ -66,7 +66,7 @@ public class LIFXPacketFactory {
 
 
 
-    return BinaryString.toHexString(fullPacketStr, BinaryString.LITTLE_ENDIAN);
+    return BinaryString.binaryStringToHexArray(fullPacketStr, BinaryString.LITTLE_ENDIAN);
 
 
 

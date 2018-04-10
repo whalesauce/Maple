@@ -33,7 +33,7 @@ public class Maple {
 
 
         //System.out.println(BinaryString.toFormattedBinaryString(5829, 8));
-       String justForTesting = "";
+       byte[] justForTesting = {};
         try {
              justForTesting = LIFXPacketFactory.returnLightOnPacket(null, true);
         } catch (MapleException e) {
@@ -42,8 +42,10 @@ public class Maple {
 
         }
 
-        for(int i = 0; i < justForTesting.length(); i++){
-            System.out.print(justForTesting.charAt(i));
+        int three = 0B11;
+
+        for(int i = 0; i < justForTesting.length; i++){
+            System.out.println(justForTesting[i] );
         }
 
 

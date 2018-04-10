@@ -53,8 +53,6 @@ public class BinaryString {
     public static String toHexString(String binaryString, int endian){
 
         int counter = 0;
-        int endianCounter = 0;
-
 
         String returnString = "";
         String tempStr = "";
@@ -87,23 +85,51 @@ public class BinaryString {
     if(endian == LITTLE_ENDIAN){
         String newReturnString = "";
          tempStr = "";
+         String tempStr2 = "";
          int switchCounter = 0;
 
         for(int i = 0; i < returnString.length(); i++){
-            tempStr += returnString.charAt(i);
-            switchCounter++;
             if(switchCounter >= 2){
-                newReturnString
+                tempStr2 += returnString.charAt(i);
+
+                switchCounter++;
+            }else{
+                tempStr += returnString.charAt(i);
+
+                switchCounter++;
+            }
+
+            if(switchCounter == 4){
+                System.out.println(tempStr2 + " | " + i);
+                System.out.println(tempStr + " | " + i);
+
+                newReturnString += tempStr2 + tempStr;
+                tempStr = "";
+                tempStr2 = "";
+                switchCounter = 0;
             }
 
 
         }
-
-
+        System.out.println(newReturnString.length());
+        return newReturnString;
     }
 
     return returnString;
     }
+
+
+
+    public static byte[] binaryStringToHexArray(String binaryString, int endian){
+        String hexString = toHexString(binaryString, endian == 1 ? BIG_ENDIAN : LITTLE_ENDIAN);
+            byte[] b = new byte[hexString.length() / 2];
+            for (int i = 0; i < b.length; i++) {
+                int index = i * 2;
+                int v = Integer.parseInt(hexString.substring(index, index + 2), 16);
+                b[i] = (byte) v;
+            }
+            return b;
+        }
  
 
 
