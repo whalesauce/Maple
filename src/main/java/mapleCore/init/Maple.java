@@ -1,5 +1,8 @@
 package mapleCore.init;
 
+import mapleCore.LIFX.packet.LIFXPacketFactory;
+import mapleCore.exception.MapleException;
+import util.BinaryString;
 import util.log.Log;
 import util.network.ip.UDPBroadcast;
 
@@ -16,6 +19,7 @@ public class Maple {
     public static void main(String[] args){
         Log.init();
 
+
         byte[] broadcast = {0x31,00,00,0x34,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,0x66,00,00,00,00,0x55,0x55,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xAC,(byte)0x0D,00,(byte)0x04,00,00};
         byte[] address = {(byte)255, (byte)255, (byte)255, (byte)255};
 
@@ -26,7 +30,30 @@ public class Maple {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        //System.out.println(BinaryString.toFormattedBinaryString(5829, 8));
+       String justForTesting = "";
+        try {
+             justForTesting = LIFXPacketFactory.returnLightOnPacket(null, true);
+        } catch (MapleException e) {
+            e.printStackTrace();
+        } {
+
+        }
+
+        for(int i = 0; i < justForTesting.length(); i++){
+            System.out.print(justForTesting.charAt(i));
+        }
+
+
+
     }
+
+
+
+
+
 
 
 }

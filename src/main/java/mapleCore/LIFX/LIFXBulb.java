@@ -7,6 +7,7 @@ public class LIFXBulb {
 
 
 
+
     /** Light variables **/
 
     /** Boolean on/off status */
@@ -36,6 +37,9 @@ public class LIFXBulb {
     /** Port */
     private final int port = 56700;
 
+    /** MAC Address */
+    private int MAC;
+
 
 
     /** Firmware Variables **/
@@ -59,16 +63,34 @@ public class LIFXBulb {
 
 
 
-
-
     public LIFXBulb() {
 
+
+
+
+
     }
 
 
-    public void changeColor() {
+
+
+
+
+
+    public void turnOn(){
 
     }
+
+    public void turnOff(){
+
+    }
+
+
+    public int getMAC() {
+
+        return MAC;
+    }
+
 
 
 }

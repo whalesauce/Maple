@@ -15,6 +15,13 @@ public class LIFXPacketProtocolHeader {
 
 
 
+    /** Bit lengths for parameters */
+
+    public static final int totalReservedBits = 80;
+    public static final int payloadTypeBits = 16;
+
+
+
 
     public static String returnPacketProtocolHeader(String payloadType) throws MapleException {
         if(payloadType.length() != 16){

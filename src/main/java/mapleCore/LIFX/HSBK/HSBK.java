@@ -97,5 +97,11 @@ public class HSBK {
 
     }
 
+    public static int getHSBKSize(){
+        /** 4 elements of 16 bit integers */
+
+        return 16 * 4;
+    }
+
 
 }
