@@ -56,6 +56,49 @@ public class Task {
 
     public Task(){
 
+        taskTitle = "Untitled Task";
+
+        taskDateTime = DateTime.now();
+
+        taskDescription = "No description";
+
+        taskPriority = PRIORITY_LOW;
+
+        taskStatus = PENDING;
+
+    }
+
+    public Task(String taskTitle){
+        this();
+
+        this.taskTitle = taskTitle;
+
+    }
+
+    public Task(String taskTitle, DateTime taskDateTime){
+        this(taskTitle);
+
+        this.taskDateTime = taskDateTime;
+
+    }
+
+    public Task(String taskTitle, DateTime taskDateTime, String taskDescription){
+        this(taskTitle, taskDateTime);
+
+        this.taskDescription = taskDescription;
+
+    }
+
+    public Task(String taskTitle, DateTime taskDateTime, String taskDescription, int taskPriority){
+        this(taskTitle, taskDateTime, taskDescription);
+
+        this.taskPriority = taskPriority;
+    }
+
+    public Task(String taskTitle, DateTime taskDateTime, String taskDescription, int taskPriority, int taskStatus){
+        this(taskTitle, taskDateTime, taskDescription, taskPriority);
+
+        this.taskStatus = taskStatus;
     }
 
 
@@ -63,18 +106,64 @@ public class Task {
 
 
 
-    public void setTaskDateTime(){
 
+    public String getTaskTitle() {
+        return taskTitle;
     }
 
-    public void setTaskRepeat(){
-
+    public void setTaskTitle(String taskTitle) {
+        this.taskTitle = taskTitle;
     }
 
-    public DateTime getTaskDateTime(){
-        return null;
 
+
+
+    public DateTime getTaskDateTime() {
+        return taskDateTime;
     }
+
+    public void setTaskDateTime(DateTime taskDateTime) {
+        this.taskDateTime = taskDateTime;
+    }
+
+
+
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
+
+    public void setTaskDescription(String taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
+
+
+
+    public int getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(int taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
+
+
+
+    public int getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(int taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+
+
+
+
+
 
 
 
