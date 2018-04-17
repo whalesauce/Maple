@@ -69,6 +69,7 @@ public class Maple implements Runnable{
                     //System.out.println(BinaryString.toFormattedBinaryString(5829, 8));
                     byte[] justForTesting = {};
                     try {
+
                         justForTesting = LIFXPacketFactory.returnLightOffPacket(null);
                     } catch (MapleException e) {
                         e.printStackTrace();
