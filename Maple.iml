@@ -14,5 +14,9 @@
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="gson" level="project" />
     <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.1" level="project" />
+    <orderEntry type="library" name="org.jooq:jooq:3.10.6" level="project" />
+    <orderEntry type="library" name="joda-time:joda-time:2.9.9" level="project" />
+    <orderEntry type="library" name="org.pcap4j:pcap4j-core:1.7.3" level="project" />
+    <orderEntry type="library" name="org.pcap4j:pcap4j-packetfactory-static:1.7.3" level="project" />
   </component>
 </module>

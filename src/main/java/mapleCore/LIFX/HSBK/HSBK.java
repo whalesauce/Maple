@@ -1,5 +1,7 @@
 package mapleCore.LIFX.HSBK;
 
+import util.BinaryString;
+
 /**
  * Created by williamallen on 3/2/18.
  */
@@ -19,35 +21,43 @@ public class HSBK {
      Kelvin: range 2500° (warm) to 9000° (cool)
      */
 
+
+     public int hue;
+     public int saturation;
+     public int brightness;
+     public int kelvin;
+
+
+     public HSBK(int hue, int saturation, int brightness, int kelvin){
+         this.hue = hue;
+         this.saturation = saturation;
+         this.brightness = brightness;
+         this.kelvin = kelvin;
+     }
+
+
+
+
+
+
+
+
+     /** Static methods **/
+
+
      /** Convert to 16 bit binary integers **/
     public static String getHSBKBinary(int hue, int saturation, int brightness, int kelvin){
-        String hueStr = Integer.toBinaryString(hue);
-        String satStr = Integer.toBinaryString(saturation);
-        String brightStr = Integer.toBinaryString(brightness);
-        String kelvinStr = Integer.toBinaryString(kelvin);
+        String hueStr = BinaryString.toFormattedBinaryString(hue, 16);
+        String satStr = BinaryString.toFormattedBinaryString(saturation, 16);
+        String brightStr = BinaryString.toFormattedBinaryString(brightness, 16);
+        String kelvinStr = BinaryString.toFormattedBinaryString(kelvin, 16);
 
-        for(int i = hueStr.length(); i < 16; i++){
-            hueStr = "0" + hueStr;
-        }
-
-        for(int i = satStr.length(); i < 16; i++){
-            satStr = "0" + satStr;
-        }
-
-        for(int i = brightStr.length(); i < 16; i++){
-            brightStr = "0" + brightStr;
-        }
-
-        for(int i = kelvinStr.length(); i < 16; i++){
-            kelvinStr = "0" + kelvinStr;
-        }
 
 
         return hueStr + satStr + brightStr + kelvinStr;
 
 
 
-        //This is wrong, add leading 0's
     }
 
 
@@ -85,6 +95,12 @@ public class HSBK {
         return getHSBKBinary(hue, saturation, brightness, value);
 
 
+    }
+
+    public static int getHSBKSize(){
+        /** 4 elements of 16 bit integers */
+
+        return 16 * 4;
     }
 
 
