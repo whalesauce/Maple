@@ -23,6 +23,20 @@ public class SQLHandler {
 
   }
 
+
+  public static void addQuery(String query){
+
+      /**
+       *
+       *
+       */
+
+
+
+  }
+
+
+
   public static void closeConnection() throws SQLException {
       if(connection.isClosed()){
           //Log connection is already closed
